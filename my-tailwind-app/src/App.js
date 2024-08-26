@@ -15,9 +15,9 @@ function App() {
   );
 
   return (
-      <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-600 flex items-center justify-center">
-        <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-2xl" style={{ height: '400px' }}>
-          <h1 className="text-3xl font-bold text-center mb-6">Search & Filter Table</h1>
+      <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-600 flex items-center justify-center p-4">
+        <div className="bg-white shadow-lg rounded-lg p-4 md:p-8 w-full max-w-2xl" style={{ height: '400px' }}>
+          <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6">Search & Filter Table</h1>
 
           {/* Search bar settings */}
           <div className="mb-4">
@@ -31,24 +31,24 @@ function App() {
           </div>
 
           {/* Table settings */}
-          <div className="overflow-auto" style={{ maxHeight: '280px' }}>
-            <table className="min-w-full table-fixed bg-gray-100 shadow-md rounded-lg">
+          <div className="overflow-x-auto overflow-y-auto" style={{ maxHeight: '280px' }}>
+            <table className="min-w-full table-auto bg-gray-100 shadow-md rounded-lg">
               <thead>
               <tr>
-                <th className="w-1/4 px-4 py-2 bg-blue-500 text-white">ID</th>
-                <th className="w-1/4 px-4 py-2 bg-blue-500 text-white">Name</th>
-                <th className="w-1/4 px-4 py-2 bg-blue-500 text-white">Age</th>
-                <th className="w-1/4 px-4 py-2 bg-blue-500 text-white">Occupation</th>
+                <th className="px-2 md:px-4 py-2 bg-blue-500 text-white text-sm md:text-base">ID</th>
+                <th className="px-2 md:px-4 py-2 bg-blue-500 text-white text-sm md:text-base">Name</th>
+                <th className="px-2 md:px-4 py-2 bg-blue-500 text-white text-sm md:text-base">Age</th>
+                <th className="px-2 md:px-4 py-2 bg-blue-500 text-white text-sm md:text-base">Occupation</th>
               </tr>
               </thead>
               <tbody>
               {filteredData.length > 0 ? (
                   filteredData.map((item) => (
                       <tr key={item.id}>
-                        <td className="border px-4 py-2">{item.id}</td>
-                        <td className="border px-4 py-2">{item.name}</td>
-                        <td className="border px-4 py-2">{item.age}</td>
-                        <td className="border px-4 py-2">{item.occupation}</td>
+                        <td className="border px-2 md:px-4 py-2 text-sm md:text-base">{item.id}</td>
+                        <td className="border px-2 md:px-4 py-2 text-sm md:text-base">{item.name}</td>
+                        <td className="border px-2 md:px-4 py-2 text-sm md:text-base">{item.age}</td>
+                        <td className="border px-2 md:px-4 py-2 text-sm md:text-base">{item.occupation}</td>
                       </tr>
                   ))
               ) : (
@@ -65,5 +65,3 @@ function App() {
 }
 
 export default App;
-
-// end of code
